@@ -34,7 +34,7 @@ completion = client.chat.completions.create(
 
 #desafio
 #o que você quer ver? # Uma praia? Pessoas? Mochilas? Montanha? Um cachorro correndo atrás de uma bola?Seja criativo(a)!
-prompt_imagem = f"Uma foto realista com uma unica arvore e um bode e um cachorro correndo atras de uma mochila verde de uma praia no Brasil. Na parte superior, inclua o texto 'Minha primeira imagem gerada por Inteligência Artificial'"
+prompt_imagem = f"Uma foto realista de uma praia no Brasil. Na parte superior, inclua o texto 'Minha primeira imagem gerada por Inteligência Artificial'"
 response = client.images.generate(
     model="dall-e-3",
     prompt=prompt_imagem,
