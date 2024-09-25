@@ -1,3 +1,4 @@
+import webbrowser
 from openai import OpenAI
 client = OpenAI()
 
@@ -18,7 +19,7 @@ else:
 
 
 #desafio 5 montar o prompt
-#se desejar, inclua uma localização
+#se desejar, inclua uma localização, valor estimado para comer etc
 prompt_sugestao = "Sugira uma viagem em sao paulo do tipo " + tipo_viagem + " restrita ao orcamento de " + str(orcamento)
 
 completion = client.chat.completions.create(
@@ -29,4 +30,17 @@ completion = client.chat.completions.create(
 )
 
 #não mexa aqui ainda
-print(completion.choices[0].message.content)
+#print(completion.choices[0].message.content)
+
+#desafio
+#o que você quer ver? # Uma praia? Pessoas? Mochilas? Montanha? Um cachorro correndo atrás de uma bola?Seja criativo(a)!
+prompt_imagem = f"Uma foto realista com uma unica arvore e um bode e um cachorro correndo atras de uma mochila verde de uma praia no Brasil. Na parte superior, inclua o texto 'Minha primeira imagem gerada por Inteligência Artificial'"
+response = client.images.generate(
+    model="dall-e-3",
+    prompt=prompt_imagem,
+    n=1,
+    size="1024x1024"
+)
+
+print(response.data[0].url)
+webbrowser.open(response.data[0].url)
