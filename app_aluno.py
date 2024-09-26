@@ -3,8 +3,10 @@
 #escreva seu segundo requisito
 #escreva seu terceiro requisito
 import webbrowser
+import os
+from dotenv import load_dotenv
 from openai import OpenAI
-client = OpenAI()
+client = OpenAI(os.getenv('OPENAI_API_KEY'))
 
 #desafio 2 - exibir mensagem de boas vindas
 
