@@ -1,0 +1,7 @@
+- No começo do dia, transferir arquivos 
+    - script_inicio_dia.cmd
+    - script_inicio_cada_oficina.cmd
+    - app_aluno.py 
+para a pasta Documentos
+- No começo do dia, executar o script script_inicio_dia uma única vez, criando o diretório handson no Desktop, ambiente virtual Python, ativando e instalando openai
+- No começo de cada oficina, executar o script_inicio_cada_oficinal.cmd, matando o code, apagando o app_aluno_anterior, copiando um novo e abrindo code
