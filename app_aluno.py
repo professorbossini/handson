@@ -1,48 +1,51 @@
 #desafio 1
-#escreva seu primeiro requisito
-#escreva seu segundo requisito
-#escreva seu terceiro requisito
+#Escreva aqui seu primeiro requisito
+#Escreva aqui seu segundo requisito
+#Escreva aqui seu terceiro requisito
+
 import webbrowser
-import os
 from dotenv import load_dotenv
 from openai import OpenAI
-client = OpenAI(os.getenv('OPENAI_API_KEY'))
+load_dotenv()
+client = OpenAI()
 
-#desafio 2 - exibir mensagem de boas vindas
-
-
-#desafio 3 - capturar o tipo de viagem que o usuário deseja: montanha ou praia
+#desafio 2 - Exibir mensagem de boas vindas
 
 
-#desafio 4 - capturar o orçamento do usuário, representação numérica
+#desafio 3 - Permitir que o usuário informe o tipo de viagem desejado e guardar em uma variável
 
 
-#desafio 5 - decidir se a sugestâo é para viagem econômica ou premium e mostrar para o usuário
+#desafio 4 - Permitir que o usuário informe seu orçamento e guardar a sua representação numérica em uma variável
 
-#desafio 6 - montar o prompt para pedir ao chatgpt a sugestão de viagem
+
+#desafio 5 - Em função do orçamento informado pelo usuário, dizer a ele se a recomendação será econômica ou premium
+
+
+
+#desafio 6 montar o prompt para sugestâo
 #se desejar, inclua uma localização, valor estimado para comer etc
-prompt_sugestao = None
+# prompt_sugestao = ""
 
-completion = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[
-        {"role": "user", "content": f'{prompt_sugestao}. max:100 tokens'}
-    ]
-)
+# completion = client.chat.completions.create(
+#     model="gpt-4o-mini",
+#     messages=[
+#         {"role": "user", "content": f'{prompt_sugestao}. max:100 tokens'}
+#     ]
+# )
 
-#remova este comentário quando o professor falar, ok?:)
+
+#Remova esse comentário quando o professor pedir, ok? :)
 #print(completion.choices[0].message.content)
 
-#desafio 7 - montar o prompt para pedir ao chatgpt a imagem
-#o que você quer ver? 
-# Uma praia? Pessoas? Mochilas? Montanha? Um cachorro correndo atrás de uma bola?Seja criativo(a)!
-prompt_imagem = None
-response = client.images.generate(
-    model="dall-e-3",
-    prompt=prompt_imagem,
-    n=1,
-    size="1024x1024"
-)
+#desafio 7 montar o prompt para imagem
+#o que você quer ver? # Uma praia? Pessoas? Mochilas? Montanha? Um cachorro correndo atrás de uma bola? Seja criativo(a)!
+# prompt_imagem = ""
+# response = client.images.generate(
+#     model="dall-e-3",
+#     prompt=prompt_imagem,
+#     n=1,
+#     size="1024x1024"
+# )
 
-print(response.data[0].url)
-webbrowser.open(response.data[0].url)
+#Remova esse comentário quando o professor pedir, ok? :)
+#webbrowser.open(response.data[0].url)
