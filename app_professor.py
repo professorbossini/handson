@@ -7,10 +7,10 @@
 #O sistema deve utilizar um serviço de IA para gerar uma imagem que ilustra a recomendação que será entregue ao usuário.
 
 import webbrowser
-import os
 from dotenv import load_dotenv
 from openai import OpenAI
-client = OpenAI(os.getenv('OPENAI_API_KEY'))
+load_dotenv()
+client = OpenAI()
 
 #desafio 2
 print("Bem vindo ao sistema de recomendação de viagens")
@@ -44,7 +44,7 @@ print(completion.choices[0].message.content)
 
 #desafio 7 montar o prompt para imagem
 #o que você quer ver? # Uma praia? Pessoas? Mochilas? Montanha? Um cachorro correndo atrás de uma bola? Seja criativo(a)!
-prompt_imagem = "Uma foto de " + tipo_viagem + ". Pessoa viajando com orçamento restrito a " + orcamento
+prompt_imagem = "Uma foto de " + tipo_viagem + ". Pessoa viajando com orçamento restrito a " + str(orcamento)
 response = client.images.generate(
     model="dall-e-3",
     prompt=prompt_imagem,
