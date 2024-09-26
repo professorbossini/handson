@@ -1,4 +1,7 @@
 taskkill /F /IM Code.exe
-cd %USERPROFILE%\Desktop\handson
+cd "C:\Insight Files\handson_aluno"
 del /F /Q app_aluno.py
-copy %USERPROFILE%\Desktop\Documents\handson\app_aluno.py %USERPROFILE%\Desktop\handson
+del /F /Q .env
+copy "C:\Insight Files\app_aluno.py" "C:\Insight Files\handson_aluno"
+copy "C:\Insight Files\.env" "C:\Insight Files\handson_aluno"
+code .
