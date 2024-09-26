@@ -1,4 +1,5 @@
-- No começo do dia, transferir arquivos 
+- Clonar em C:\Insight Files
+- Transferir arquivos 
     - script_inicio_dia.cmd
     - script_inicio_cada_oficina.cmd
     - app_aluno.py 
